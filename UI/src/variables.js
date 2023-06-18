@@ -1,4 +1,4 @@
-const mainUrl = "http://localhost:3000"
+const mainUrl = ""
 export default mainUrl
 
 
