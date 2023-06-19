@@ -6,6 +6,9 @@ const flowReading = mongoose.Schema({
     valve: {
         type: Boolean,
     },
+    volume: {
+        type: Number
+    }
 }, {
     timestamps: true
 })

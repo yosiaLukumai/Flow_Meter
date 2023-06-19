@@ -6,12 +6,14 @@ import './App.css';
 import GaugeComponent from './lib';
 import CONSTANTS from './lib/GaugeComponent/constants';
 import But from './components/buttos';
-import { flow, set } from 'lodash';
 const App = () => {
   const [dataR, setdataR] = useState({
     valve: false,
-    flowValue: 22
+    flowValue: 22,
+    volume: 0
   })
+  console.log(dataR);
+  
   const [valveChanger, setChangeValve] = useState(dataR.valve)
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
@@ -126,13 +128,14 @@ const App = () => {
                 id="gauge-component-radial4"
                 value={dataR.flowValue}
                 maxValue={32}
-                minValue={4}
+                minValue={0}
                 style={{ fontSize: "3rem", fontWeight: "bold" }}
                 type="radial"
                 labels={{
                   markLabel: {
                     type: "outer",
                     marks: [
+                      {value: 0},
                       { value: 5 },
                       { value: 10 },
                       { value: 15 },
@@ -155,6 +158,11 @@ const App = () => {
                   color: "#FFA500"
                 }}
               />
+            </Col>
+          </Row>
+          <Row className='justify-content-center'>
+            <Col xs={5} lg={4} style={{padding:"1.2rem", fontSize:"1.2rem", fontWeight:"bolder"}}>
+             {dataR?.volume}
             </Col>
           </Row>
           <Row className='justify-content-center'>

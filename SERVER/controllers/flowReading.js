@@ -5,8 +5,8 @@ const io = require("../index")
 
 const createFirstReading = async(req, res) => {
   try {
-    const {flowValue, valve} = req.body;
-    const created = await flowReadingModel.create({flowValue, valve})
+    const {flowValue, valve, volume} = req.body;
+    const created = await flowReadingModel.create({flowValue, valve, volume})
     if(created) {
       return res.json(createOutput(true, "passed creation", false))
     }else {
@@ -22,8 +22,12 @@ const createFirstReading = async(req, res) => {
 const saveNewFlow = async(req, res) => {
   try {
     const flowV = req.params.flow
-    if(Number(flowV) && flowV <= 34 && flowV >= 5) {
-      const updated = await flowReadingModel.updateOne({}, {flowValue: flowV})
+    const volums = req.params.volume
+    console.log(volums, flowV);
+    if(Number(flowV) && flowV <= 34 && flowV >= 0 && Number(volums)) {
+      const one = await flowReadingModel.findOne()
+      let h =  (Number(one.volume) + Number(volums))
+      const updated = await flowReadingModel.updateOne({}, {flowValue: flowV, volume:h})
       if(updated) {
         const data = await flowReadingModel.findOne()
         io.Socket.emit("dataSet", data)
