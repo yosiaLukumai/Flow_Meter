@@ -11,4 +11,7 @@ I was inpired alot with visit at TBL industry in Mbeya, I was able to observer m
 - Flow sensor
 - Hoses
 - Base (Wood)
+
+  ## Snaps
+  ![Alt Large screen ](https://github.com/yosiaLukumai/Flow_Meter/blob/master/Large%20screen%20snap.png)
   
