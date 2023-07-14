@@ -14,4 +14,5 @@ I was inpired alot with visit at TBL industry in Mbeya, I was able to observer m
 
   ## Snaps
   ![Alt Large screen ](https://github.com/yosiaLukumai/Flow_Meter/blob/master/Large%20screen%20snap.png)
+  ![Alt small screen ](https://github.com/yosiaLukumai/Flow_Meter/blob/master/small%20screen%20snap.png)
   
